@@ -30,24 +30,24 @@ public class Main {
         return Main.randomNumber;
     }
     // user guesses the number
-    public static int userGuessesNumber(){
+    public static void userGuessesNumber(){
         System.out.println("Guess and enter number from 1 to 100");
-        Scanner input = new Scanner(System.in);
-        int userGuess = input.nextInt();
-//        Main.userGuess = userGuess;
+        do {
+            Scanner input = new Scanner(System.in);
+            int userGuess = input.nextInt();
 
-        if(userGuess == Main.randomNumber){
-            System.out.println("You guessed CORRECT");
-            Main.userGuess = userGuess;
-        } if (userGuess < Main.randomNumber){
-            System.out.println("Your number: " + userGuess + " is less that one computer generated");
-            Main.userGuess = userGuess;
-        } if (userGuess > Main.randomNumber) {
-            System.out.println("Your number: " + userGuess + " is bigger that one computer generated");
-            Main.userGuess = userGuess;
-        }
-//        System.out.println(userGuess);
-
-        return Main.userGuess;
+            if(userGuess == Main.randomNumber){
+                System.out.println("You guessed CORRECT");
+                Main.userGuess = userGuess;
+            }
+            if (userGuess < Main.randomNumber){
+                System.out.println("Your number: " + userGuess + " is less that one computer generated");
+                Main.userGuess = userGuess;
+            } if (userGuess > Main.randomNumber) {
+                System.out.println("Your number: " + userGuess + " is bigger that one computer generated");
+                Main.userGuess = userGuess;
+            }
+        } while (userGuess != Main.randomNumber);
+//        return Main.userGuess;
     }
 }
